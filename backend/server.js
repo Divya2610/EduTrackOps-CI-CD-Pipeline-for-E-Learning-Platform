@@ -16,6 +16,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running successfully!");
+});
+
 // In-memory data store
 let courses = [
   { 
