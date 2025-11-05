@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,8 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
 app.get("/", (req, res) => {
-  res.send("✅ Backend is running successfully!");
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 // In-memory data store
