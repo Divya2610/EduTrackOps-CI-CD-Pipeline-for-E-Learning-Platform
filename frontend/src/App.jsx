@@ -162,7 +162,7 @@ function App() {
                 <span>👥 {course.students} students</span>
               </div>
               {course.price && (
-                <p className="price">${course.price}</p>
+                <p className="price">Rs {course.price}</p>
               )}
               <button className="btn-enroll">Enroll Now</button>
             </div>
